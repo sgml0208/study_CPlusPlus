@@ -3,10 +3,10 @@
  * @Author:  shang guan meng luo
  * @version:
  * @Date: 2024-07-09 21:23:38
- * @LastEditTime: 2024-07-09 22:02:46
+ * @LastEditTime: 2024-09-26 22:12:40
  */
 
-
+#include <windows.h>
 #include <iostream>
 using namespace std;
 
@@ -86,6 +86,8 @@ void fun_cz_quote(const int &a)   // 与上面属于类型不同
 
 int main()
 {
+    SetConsoleOutputCP(65001); // 设置控制台输出编码为UTF-8
+    
     fun1(1);
     fun2();
     fun3(11, 2);  // 2不写则报错，但是要有，目前用不到

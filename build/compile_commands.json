@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/project-practice/learn_C++/study_CPlusPlus/build",
+  "command": "D:\\Dev-Cpp\\mingw64\\bin\\g++.exe   -g -std=gnu++11   -Wall -g -o CMakeFiles\\study_c++.dir\\base_knowledges\\3_function.cpp.obj -c D:\\project-practice\\learn_C++\\study_CPlusPlus\\base_knowledges\\3_function.cpp",
+  "file": "D:/project-practice/learn_C++/study_CPlusPlus/base_knowledges/3_function.cpp",
+  "output": "CMakeFiles/study_c++.dir/base_knowledges/3_function.cpp.obj"
+}
+]
