@@ -3,7 +3,7 @@
  * @Author:  shang guan meng luo
  * @version: 
  * @Date: 2024-09-26 22:05:51
- * @LastEditTime: 2024-09-26 22:43:52
+ * @LastEditTime: 2024-09-26 23:07:15
 -->
 
 
@@ -12,3 +12,5 @@
 配好了cmake环境，可以调试编译
 
 这是在master分支下提交的
+
+学习了模板中的函数模板
