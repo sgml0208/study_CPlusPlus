@@ -6,7 +6,6 @@
  * @LastEditTime: 2024-10-02 21:57:40
  */
 
-
 /*
 要求：
     可以对内置数据类型以及自定义数据类型的数据进行存储
@@ -18,8 +17,6 @@
     可以获取数组中当前元素个数和数组的容量
 
 */
-
-
 
 #include <iostream>
 #include "myArray.hpp"
@@ -39,16 +36,14 @@ void test()
     // MyArray<int> arr2(arr1);     // 测试拷贝构造函数
     // MyArray<int> arr3(100);      // 测试operator=
     // arr3 = arr1;
-    
+
     for (int i = 0; i < 5; i++)
-        arr1.pushBack(i);           // 尾插法插入数据
+        arr1.pushBack(i); // 尾插法插入数据
     cout << "arr1的数据为: ";
     printArray(arr1);
-    cout << "capacity: " << arr1.getCapacity() << endl;   // capacity: 10
-    cout << "size: " <<arr1.getSize() << endl;        // size: 5
-    
+    cout << "capacity: " << arr1.getCapacity() << endl; // capacity: 10
+    cout << "size: " << arr1.getSize() << endl;         // size: 5
 }
-
 
 // 自定义数据类型
 class Person
@@ -56,7 +51,7 @@ class Person
 public:
     string m_name;
     int m_age;
-    Person(){};   // 提供一个默认构造函数是个好习惯，因为它可以增加类的灵活性和易用性。
+    Person() {}; // 提供一个默认构造函数是个好习惯，因为它可以增加类的灵活性和易用性。
     // Person1() = default;  // c++11标准： 要求编译器生成默认构造函数
     Person(string name, int age)
     {
@@ -71,13 +66,13 @@ void printPerson(MyArray<Person> &arr)
 {
     for (int i = 0; i < arr.getSize(); i++)
     {
-        cout << "name: " << arr[i].m_name <<"   age: " << arr[i].m_age << endl;
+        cout << "name: " << arr[i].m_name << "   age: " << arr[i].m_age << endl;
     }
 }
 
 void test2()
 {
-    MyArray<Person> arr(12);   // 创建对象数组时，C++ 会尝试为每个数组元素调用默认构造函数，若编译器无法找到默认构造函数则报错
+    MyArray<Person> arr(12); // 创建对象数组时，C++ 会尝试为每个数组元素调用默认构造函数，若编译器无法找到默认构造函数则报错
     Person p1("zhangsan", 11);
     Person p2("lisi", 22);
     Person p3("wangwu", 33);
@@ -89,8 +84,8 @@ void test2()
     arr.pushBack(p4);
 
     printPerson(arr);
-    cout << "capacity: " << arr.getCapacity() << endl;   // capacity: 12
-    cout << "size: " << arr.getSize() << endl;        // size: 4
+    cout << "capacity: " << arr.getCapacity() << endl; // capacity: 12
+    cout << "size: " << arr.getSize() << endl;         // size: 4
 }
 
 int main()
@@ -99,8 +94,5 @@ int main()
 
     test2();
 
-
     return 0;
 }
-
-
