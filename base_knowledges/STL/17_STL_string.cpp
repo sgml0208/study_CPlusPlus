@@ -3,7 +3,7 @@
  * @Author:  shang guan meng luo
  * @version:
  * @Date: 2024-10-03 13:56:55
- * @LastEditTime: 2024-10-03 16:04:06
+ * @LastEditTime: 2024-10-04 19:29:50
  */
 
 /*
@@ -23,10 +23,10 @@ using namespace std;
 
 /*
 构造函数原型:   用于初始化操作
-string();                       //创建一个空的字符串 例如: string str;
-string(const char* s);          //使用字符串s初始化
-string(const string& str);      //使用一个string对象初始化另一个string对象  拷贝构造
-string(int n,char c);           //使用n个字符c初始化
+string();                       创建一个空的字符串 例如: string str;
+string(const char* s);          使用字符串s初始化
+string(const string& str);      使用一个string对象初始化另一个string对象  拷贝构造
+string(int n,char c);           使用n个字符c初始化
 */
 void test1()
 {
@@ -44,13 +44,13 @@ void test1()
 /*
 赋值操作:
 赋值的函数原型:
-string& operator=(const char* s);       //char*类型字符串 赋值给当前的字符串
-string& operator=(const string &s);     //把字符串s赋给当前的字符串
-string& operator=(char c);              //字符赋值给当前的字符串
-string& assign(const char *s);          //把字符串s赋给当前的字符串
-string& assign(const char *s, int n);   //把字符串s的前n个字符赋给当前的字符串
-string& assign(const string &s);        //把字符串s赋给当前字符串
-string& assign(int n, char c);          //用n个字符c赋给当前字符串
+string& operator=(const char* s);         char*类型字符串 赋值给当前的字符串
+string& operator=(const string &s);       把字符串s赋给当前的字符串
+string& operator=(char c);                字符赋值给当前的字符串
+string& assign(const char *s);            把字符串s赋给当前的字符串
+string& assign(const char *s, int n);     把字符串s的前n个字符赋给当前的字符串
+string& assign(const string &s);          把字符串s赋给当前字符串
+string& assign(int n, char c);            用n个字符c赋给当前字符串
 */
 void test2()
 {
@@ -78,13 +78,13 @@ void test2()
 
 /*
 string字符串拼接:
-string& operator+=(const char* str);                //重载+=操作符
-string& operator+=(const char c);                   //重载+=操作符
-string& operator+=(const string& str);              //重载+=操作符
-string& append(const char *s);                      //把字符串s连接到当前字符串结尾
-string& append(const char *s, int n);               //把字符串s的前n个字符连接到当前字符申结尾
-string& append(const string &s);                    //同operator+=(const string& str)
-string& append(const string &s，int pos，int n);    //字符串s中从pos开始的n个字符连接到字符串结尾
+string& operator+=(const char* str);                重载+=操作符
+string& operator+=(const char c);                   重载+=操作符
+string& operator+=(const string& str);              重载+=操作符
+string& append(const char *s);                      把字符串s连接到当前字符串结尾
+string& append(const char *s, int n);               把字符串s的前n个字符连接到当前字符申结尾
+string& append(const string &s);                    同operator+=(const string& str)
+string& append(const string &s，int pos，int n);    字符串s中从pos开始的n个字符连接到字符串结尾
 */
 void test3()
 {
@@ -107,16 +107,16 @@ void test3()
 
 /*
 string查找和替换:
-int find(const string& str,int pos=0)const;         //查找str第一次出现位置,从pos开始查找
-int find(const char*s,int pos =0)const;             //查找s第一次出现位置,从pos开始查找
-int find(const char* s,int pos, int n)const;        //从pos位置查找s的前n个字符第一次位置
-int find(const char c,int pos =0)const;             //查找字符c第一次出现位置
-int rfind(const string& str,int pos =npos)const;    //查找str最后一次位置,从pos开始查找
-int rfind(const char*s,int pos =npos)const;         //查找s最后一次出现位置,从pos开始查找
-int rfind(const char*s,int pos,int n)const;         //从pos查找s的前n个字符最后一次位置
-int rfind(const char c,int pos=0)const;             //查找字符c最后一次出现位置
-string& replace(int pos, int n, const string& str); //替换从pos开始n个字符为字符串str
-string& replace(int pos,int n,const char* s);       //替换从pos开始的n个字符为字符串s
+int find(const string& str,int pos=0)const;           查找str第一次出现位置,从pos开始查找
+int find(const char*s,int pos =0)const;               查找s第一次出现位置,从pos开始查找
+int find(const char* s,int pos, int n)const;          从pos位置查找s的前n个字符第一次位置
+int find(const char c,int pos =0)const;               查找字符c第一次出现位置
+int rfind(const string& str,int pos =npos)const;      查找str最后一次位置,从pos开始查找
+int rfind(const char*s,int pos =npos)const;           查找s最后一次出现位置,从pos开始查找
+int rfind(const char*s,int pos,int n)const;           从pos查找s的前n个字符最后一次位置
+int rfind(const char c,int pos=0)const;               查找字符c最后一次出现位置
+string& replace(int pos, int n, const string& str);   替换从pos开始n个字符为字符串str
+string& replace(int pos,int n,const char* s);         替换从pos开始的n个字符为字符串s
 */
 void test4()
 {
@@ -154,10 +154,10 @@ void test5()
 /*
 string插入和删除:
 函数原型:
-string& insert(int pos,const char*s);       //插入字符串
-string& insert(int pos,const string& str);  //插入字符串
-string& insert(int pos,int n, char c);      //在指定位置插入n个字符c
-string& erase(int pos,int n=npos);          //删除从Pos开始的n个字符
+string& insert(int pos,const char*s);         插入字符串
+string& insert(int pos,const string& str);    插入字符串
+string& insert(int pos,int n, char c);        在指定位置插入n个字符c
+string& erase(int pos,int n=npos);            删除从Pos开始的n个字符
 */
 void test6()
 {
@@ -177,7 +177,7 @@ void test6()
 /*
 string子串:
 函数原型:
-string substr(int pos0,int n=npos) const;    //返回由pos开始的n个字符组成的字符串
+string substr(int pos0,int n=npos) const;    返回由pos开始的n个字符组成的字符串
 */
 void test7()
 {

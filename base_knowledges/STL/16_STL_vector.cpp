@@ -3,7 +3,7 @@
  * @Author:  shang guan meng luo
  * @version:
  * @Date: 2024-10-03 11:41:57
- * @LastEditTime: 2024-10-03 21:05:00
+ * @LastEditTime: 2024-10-04 19:29:11
  */
 
 /*
@@ -129,9 +129,9 @@ void printVector(const vector<int> &v)
 /*
 vector赋值操作：
 函数原型:
-vector& operator=(const vector &vec);   //重载等号操作符
-assign(beg,end);                        //将[beg, end)区间中的数据拷贝赋值给本身。
-assign(n, elem);                        //将n个elem拷贝赋值给本身
+vector& operator=(const vector &vec);   重载等号操作符
+assign(beg,end);                        将[beg, end)区间中的数据拷贝赋值给本身。
+assign(n, elem);                        将n个elem拷贝赋值给本身
 
 */
 void test4()
@@ -160,11 +160,11 @@ void test4()
 /*
 vector容量和大小：      capacity() >= size()
 函数原型:
-empty();            //判断容器是否为空
-capacity();         //容器的容量
-size();             //返回容器中元素的个数
-resize(int num);    //重新指定容器的长度为num，若容器变长，则以默认值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。
-resize(int num, elem); //重新指定容器的长度为num，若容器变长，则以elem值填充新位置，如果容器变短，则末尾超出容器长度的元素被删除
+empty();                判断容器是否为空
+capacity();             容器的容量
+size();                 返回容器中元素的个数
+resize(int num);        重新指定容器的长度为num，若容器变长，则以默认值填充新位置。如果容器变短，则末尾超出容器长度的元素被删除。
+resize(int num, elem);  重新指定容器的长度为num，若容器变长，则以elem值填充新位置，如果容器变短，则末尾超出容器长度的元素被删除
 */
 void test5()
 {
@@ -189,13 +189,13 @@ void test5()
 
 /*
 vector插入和删除：
-push back(ele);                                 //尾部插入元素ele
-pop_back();                                     //删除最后一个元素
-insert(const iterator pos, ele);                //迭代器指向位置pos插入元素ele
-insert(const_iterator pos，int count,ele);      //迭代器指向位置pos插入count个元素ele
-erase(const iterator pos);                      //删除迭代器指向的元素
-erase(const iterator start,const iterator end); //删除选代器从start到end之间的元素
-clear();                                        //删除容器中所有元素
+push back(ele);                                  尾部插入元素ele
+pop_back();                                      删除最后一个元素
+insert(const iterator pos, ele);                 迭代器指向位置pos插入元素ele
+insert(const_iterator pos，int count,ele);       迭代器指向位置pos插入count个元素ele
+erase(const iterator pos);                       删除迭代器指向的元素
+erase(const iterator start,const iterator end);  删除选代器从start到end之间的元素
+clear();                                         删除容器中所有元素
 */
 void test6()
 {
@@ -231,7 +231,7 @@ void test6()
 /*
 vector互换容器： 实现两个容器内元素进行互换
 函数原型:
-swap(vec);     // 将vec与本身的元素互换
+swap(vec);     将vec与本身的元素互换
 
 互换容器用途：可以实现收缩内存空间
 */
@@ -278,7 +278,7 @@ void test7()
 /*
 vector预留空间: 减少vector在动态扩展容量时的扩展次数
 函数原型:
-reserve(int len);   // 容器预留len个元素长度，预留位置不初始化，元素不可访问。
+reserve(int len);    容器预留len个元素长度，预留位置不初始化，元素不可访问。
 */
 void test8()
 {
