@@ -3,7 +3,7 @@
  * @Author:  shang guan meng luo
  * @version:
  * @Date: 2024-10-05 10:40:41
- * @LastEditTime: 2024-10-05 20:03:42
+ * @LastEditTime: 2025-02-13 15:21:35
  */
 
 /*
@@ -170,23 +170,23 @@ void test2()
     p.push_back(p5);
 
     Person p6("Bob", 13);
-    vector<Person>::iterator pos2 = find(p.begin(), p.end(), p6); // 看容器p中有没有p5这个人
+    vector<Person>::iterator pos2 = find(p.begin(), p.end(), p5); // 看容器p中有没有p5这个人
     if (pos2 == p.end())
         cout << "没找到" << endl;
     else
-        cout << "找到了" << endl; // 找到了
+        cout << "找到了" << endl;  // 找到了
 
     // ------------find_if------------
     vector<int>::iterator pos3 = find_if(v.begin(), v.end(), GreaterThan5());
     if (pos3 == v.end())
         cout << "没找到" << endl;
     else
-        cout << "找到了" << endl;                                                 // 找到了
+        cout << "找到了" << endl;  // 找到了
     vector<Person>::iterator pos4 = find_if(p.begin(), p.end(), GreaterThan12()); // 看容器p中有没有age>12的人
     if (pos4 == p.end())
         cout << "没找到" << endl;
     else
-        cout << "找到了" << endl; // 找到了
+        cout << "找到了" << endl;  // 找到了
 
     // ------------adjacent_find------------
     vector<int>::iterator pos5 = adjacent_find(v.begin(), v.end());
@@ -275,7 +275,7 @@ void test3()
 拷贝和替换算法:
 copy(iterator beg,iterator end, iterator dest);        容器内指定范围的元素拷贝到另一容器中
 replace(iterator beg,iterator end, oldValue,newValue); 将容器内指定范围的旧元素修改为新元素
-replace_if(iterator beg,iterator end,pred, newvalue);  容器内指定范围满足条件的元素替换为新元素
+replace_if(iterator beg,iterator end, _pred, newvalue);容器内指定范围满足条件的元素替换为新元素
 swap(container c1,container c2);                       互换两个容器的元素
 */
 void test4()
@@ -369,7 +369,7 @@ void test6()
     vector<int> v_dest1;
     v_dest1.resize(min(v1.size(), v2.size()));
     vector<int>::iterator itEnd1 = set_intersection(v1.begin(), v1.end(), v2.begin(), v2.end(), v_dest1.begin());
-    for_each(v_dest1.begin(), itEnd1, MyPrint());   // 1 2 3 5
+    for_each(v_dest1.begin(), itEnd1, MyPrint()); // 1 2 3 5
     cout << endl;
 
     // ------------set_union(两个集合必须有序)------------
@@ -377,7 +377,7 @@ void test6()
     vector<int> v_dest2;
     v_dest2.resize(v1.size() + v2.size());
     vector<int>::iterator itEnd2 = set_union(v1.begin(), v1.end(), v2.begin(), v2.end(), v_dest2.begin());
-    for_each(v_dest2.begin(), itEnd2, MyPrint());   // 1 2 3 4 5 6 6 7 8 9
+    for_each(v_dest2.begin(), itEnd2, MyPrint()); // 1 2 3 4 5 6 6 7 8 9
     cout << endl;
 
     // ------------set_difference(两个集合必须有序)------------
@@ -386,11 +386,11 @@ void test6()
     v_dest3.resize(max(v1.size(), v2.size()));
     cout << "v1和v2的差集: ";
     vector<int>::iterator itEnd3 = set_difference(v1.begin(), v1.end(), v2.begin(), v2.end(), v_dest3.begin());
-    for_each(v_dest3.begin(), itEnd3, MyPrint());   // v1和v2的差集: 6 6 8
+    for_each(v_dest3.begin(), itEnd3, MyPrint()); // v1和v2的差集: 6 6 8
     cout << endl;
     cout << "v2和v1的差集: ";
     itEnd3 = set_difference(v2.begin(), v2.end(), v1.begin(), v1.end(), v_dest3.begin());
-    for_each(v_dest3.begin(), itEnd3, MyPrint());   // v2和v1的差集: 4 7 9
+    for_each(v_dest3.begin(), itEnd3, MyPrint()); // v2和v1的差集: 4 7 9
     cout << endl;
 }
 

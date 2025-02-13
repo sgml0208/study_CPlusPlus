@@ -3,7 +3,7 @@
  * @Author:  shang guan meng luo
  * @version:
  * @Date: 2024-10-05 10:40:41
- * @LastEditTime: 2024-10-05 16:01:59
+ * @LastEditTime: 2025-02-13 14:40:46
  */
 
 /*
@@ -134,7 +134,12 @@ void test5()
     v.push_back(453);
     v.push_back(27);
 
-    sort(v.begin(), v.end(), mySort());
+    sort(v.begin(), v.end(), mySort());  // 如果mySort不是仿函数，而是普通函数，则不需要加()
+    /* 等价于下面的lambda表达式
+    sort(v.begin(), v.end(), [](int a, int b) {
+        return a > b; // 降序排序
+    });
+    */
 
     for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
         cout << *it << ' ';
@@ -183,9 +188,9 @@ template<class T> bool greater_equal<T>     大于等于
 template<class T> bool less<T>              小于
 template<class T> bool less_equal<T>        小于等于
 */
-template<class T>
+template <class T>
 void printVector(const vector<T> &v)
-{
+{     // typename vector<T>::const_iterator == auto
     for (typename vector<T>::const_iterator it = v.begin(); it != v.end(); it++) // v1.begin()指向v1的第一个元素，v1.end()指向v1的最后一个元素的下一个位置
         cout << *it << " ";
     cout << endl;
@@ -201,8 +206,8 @@ void test7()
     v.push_back(5);
     printVector(v); // 3 2 4 1 5
 
-    sort(v.begin(), v.end(), greater<int>()); // 使用内建的函数对象
-    printVector(v);                           // 5 4 3 2 1
+    sort(v.begin(), v.end(), less<int>()); // 使用内建的函数对象
+    printVector(v);                           // 1 2 3 4 5
 }
 
 /*
@@ -224,7 +229,7 @@ void test8()
     v2.resize(v.size());
 
     transform(v.begin(), v.end(), v2.begin(), logical_not<int>());
-    printVector(v2);        // 1 0 1 0 
+    printVector(v2); // 1 0 1 0
 }
 
 int main()

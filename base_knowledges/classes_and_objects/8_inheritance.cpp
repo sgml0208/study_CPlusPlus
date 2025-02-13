@@ -3,13 +3,13 @@
  * @Author:  shang guan meng luo
  * @version:
  * @Date: 2024-07-20 09:20:07
- * @LastEditTime: 2024-07-20 11:37:04
+ * @LastEditTime: 2025-02-12 20:38:16
  */
 
 /*
 继承的好处：减少重复代码
 
-继承的语法:  class子类 ∶ 继承方式 父类
+继承的语法:  class 子类 ∶ 继承方式 父类
 继承方式一共有三种:
     ·公共继承
     ·保护继承

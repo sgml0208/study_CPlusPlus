@@ -3,7 +3,7 @@
  * @Author:  shang guan meng luo
  * @version: 
  * @Date: 2024-10-01 13:12:15
- * @LastEditTime: 2024-10-01 21:57:59
+ * @LastEditTime: 2025-02-13 19:37:58
  */
 
 
@@ -20,7 +20,9 @@ void mySwap(T &a, T &b)
 }
 
 template<class T>
-void printArr(T arr[], int len)
+// 在C++中，数组作为函数参数时，会自动退化为指向数组首元素的指针
+// 参数T arr[]实际上并不是传递数组本身，而是传递了一个指向数组首元素的指针。因此，即使没有使用引用，数组的内容也会被正确访问和修改
+void printArr(T arr[], int len)  // == void printArr(T* arr, int len);
 {
     for (int i = 0; i < len; i++)
         cout << arr[i] << ' ';

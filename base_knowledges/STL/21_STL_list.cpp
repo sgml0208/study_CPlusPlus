@@ -3,7 +3,7 @@
  * @Author:  shang guan meng luo
  * @version:
  * @Date: 2024-10-04 09:57:44
- * @LastEditTime: 2024-10-04 19:28:08
+ * @LastEditTime: 2025-02-13 13:33:10
  */
 
 /*
@@ -17,6 +17,8 @@ list的缺点:
 
 List有一个重要的性质，插入操作和删除操作都不会造成原有list迭代器的失效，这在vector是不成立的
 
+list和vector的区别:
+vector是单向连续线性空间，list是双向链表
 总结: STL中List和vector是两个最常被使用的容器，各有优缺点
 */
 
@@ -43,7 +45,7 @@ void printList(const list<T> &l)
 /*
 list构造函数:
 函数原型:
-list<T> lst;            list采用采用模板类实现,对象的默认构造形式
+list<T> lst;            list采用模板类实现,对象的默认构造形式
 list(beg,end);          构造函数将[beg, end)区间中的元素拷贝给本身
 list(n,elem);           构造函数将n个elem拷贝给本身
 list(const list &lst);  拷贝构造函数

@@ -6,7 +6,6 @@
  * @LastEditTime: 2024-10-04 09:49:13
  */
 
-
 /*
 stack容器：
 栈中只有顶端的元素才可以被外界使用，因此栈不允许有遍历行为
@@ -28,7 +27,6 @@ empty();        判断堆栈是否为空
 size();         返回栈的大小
 */
 
-
 #include <iostream>
 #include <stack>
 #include <string>
@@ -38,13 +36,13 @@ using namespace std;
 void test()
 {
     stack<int> s;
-    
-    //入栈
+
+    // 入栈
     s.push(1);
     s.push(2);
     s.push(3);
-    
-    cout << "栈的大小为: " << s.size() << endl;   // 栈的大小为: 3
+
+    cout << "栈的大小为: " << s.size() << endl; // 栈的大小为: 3
 
     while (!s.empty())
     {
@@ -53,10 +51,9 @@ void test()
         s.pop();
     }
 
-// 栈顶元素为: 3
-// 栈顶元素为: 2
-// 栈顶元素为: 1
-
+    // 栈顶元素为: 3
+    // 栈顶元素为: 2
+    // 栈顶元素为: 1
 }
 
 int main()

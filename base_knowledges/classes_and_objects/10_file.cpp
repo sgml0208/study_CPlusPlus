@@ -1,7 +1,7 @@
 /*
  * @Description:       文件    https://www.bilibili.com/video/BV1et411b73Z?p=143&spm_id_from=pageDriver&vd_source=5c495e3ef87d1f3de4b8a79a6b9360a1
  * @Author:  shang guan meng luo
- * @version: 
+ * @version:
  * @Date: 2024-07-21 15:06:57
  * @LastEditTime: 2024-07-21 16:24:34
  */
@@ -30,12 +30,12 @@ ios::binary 二进制方式
 */
 
 #include <iostream>
-#include <fstream>        // 文件读写操作
+#include <fstream> // 文件读写操作
 #include <string>
 using namespace std;
 
 // 向文件写数据
-void WriteFile()    
+void WriteFile()
 {
     ofstream ofs;
     ofs.open("file1.txt", ios::out);
@@ -45,14 +45,14 @@ void WriteFile()
 }
 
 // 从文件读数据
-void ReadFile()    
+void ReadFile()
 {
     ifstream ifs;
     ifs.open("file1.txt", ios::in);
-    if(!ifs.is_open())
+    if (!ifs.is_open())
     {
         cout << "文件打开失败!" << endl;
-        return ;
+        return;
     }
     // 读数据方法一
     // char buf[1024] = {0};
@@ -82,14 +82,13 @@ void ReadFile()
     fighting!
     */
 
-   ifs.close();
-}    
-
+    ifs.close();
+}
 
 class Person
 {
 public:
-    char name[64];     // 最好不要用string类型
+    char name[64]; // 最好不要用string类型
     int age;
 };
 
@@ -108,14 +107,14 @@ void Binary_ReadFile()
 {
     ifstream ifs;
     ifs.open("file2.txt", ios::in | ios::binary);
-    if(!ifs.is_open())
+    if (!ifs.is_open())
     {
         cout << "文件打开失败!" << endl;
-        return ;
+        return;
     }
     Person p;
     ifs.read((char *)&p, sizeof(Person));
-    cout << "姓名：" << p.name << "  年龄：" << p.age << endl;  // 姓名：张三  年龄：18
+    cout << "姓名：" << p.name << "  年龄：" << p.age << endl; // 姓名：张三  年龄：18
 
     ifs.close();
 }
@@ -132,5 +131,3 @@ int main()
 
     return 0;
 }
-
-

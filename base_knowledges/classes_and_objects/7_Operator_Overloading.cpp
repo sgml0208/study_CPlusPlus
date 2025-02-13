@@ -3,7 +3,7 @@
  * @Author:  shang guan meng luo
  * @version: 
  * @Date: 2024-07-18 07:45:13
- * @LastEditTime: 2024-07-20 09:18:33
+ * @LastEditTime: 2025-02-12 21:15:20
  */
 
 // 运算符重载概念:对已有的运算符重新进行定义，赋予其另一种功能，以适应不同的数据类型
@@ -212,7 +212,7 @@ void test5()
 
     p3 = p2 = p1;   // 链式法则
 
-    // p2 = p1;  // 这样会使程序崩溃，因为这是浅拷贝，p1, p2指向同一快内存地址，都执行析构函数，内存释放了两遍
+    // p2 = p1;  // 这样会使程序崩溃，因为这是浅拷贝，p1, p2指向同一块内存地址，都执行析构函数，内存释放了两遍   ????????
 
     cout << "p1的年龄为: " << *p1.m_age << endl;   // 18
     cout << "p2的年龄为: " << *p2.m_age << endl;   // 18
@@ -245,7 +245,7 @@ void outPrint(string test)
 void test6()
 {
     MyPrint myPrint;
-    myPrint("hello world");  // hello world  很像函数调用
+    myPrint("hello world");  // hello world  很像函数调用     ????????
     outPrint("hello world"); // hello world  普通函数调用
 
     // 匿名对象MyPrint()

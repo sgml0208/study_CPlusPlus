@@ -48,7 +48,7 @@ bool mySort(Person &p1, Person &p2)
         if (p1.m_height >= p2.m_height)
             return true;
         else
-            return false;    
+            return false;
     }
     else
         return false;
@@ -92,7 +92,7 @@ int main()
 }
 
 /*
-排序前: 
+排序前:
 name: Tom       age: 12         height: 175
 name: Jack      age: 14         height: 168
 name: Bob       age: 13         height: 172
@@ -101,7 +101,7 @@ name: John      age: 12         height: 166
 name: Linda     age: 14         height: 158
 name: Jim       age: 13         height: 165
 
-排序后: 
+排序后:
 name: Alice     age: 11         height: 160
 name: Tom       age: 12         height: 175
 name: John      age: 12         height: 166

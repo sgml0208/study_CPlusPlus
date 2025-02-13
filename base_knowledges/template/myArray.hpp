@@ -3,7 +3,7 @@
  * @Author:  shang guan meng luo
  * @version:
  * @Date: 2024-10-02 20:05:26
- * @LastEditTime: 2024-10-02 21:38:17
+ * @LastEditTime: 2025-02-13 20:27:48
  */
 
 #pragma once
@@ -28,6 +28,10 @@ public:
         this->m_size = 0;                         // 数组中刚开始没有数据
         // this->pAddress = new T[this->m_capacity]; // error!!!
         pAddress = new T[this->m_capacity]; // 初始化时开辟数组空间
+        /*
+        this->在某些情况下是必要的，比如当成员变量和局部变量同名时，需要用this->来区分。但在代码中，pAddress没有
+        局部变量同名，因此this->是多余的。直接写pAddress = new T[this->m_capacity];更简洁，也更符合常见的C++代码风格
+        */
     }
 
     // 防止浅拷贝问题，提供拷贝构造函数

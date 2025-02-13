@@ -3,7 +3,7 @@
  * @Author:  shang guan meng luo
  * @version:
  * @Date: 2024-10-03 20:52:49
- * @LastEditTime: 2024-10-04 19:30:27
+ * @LastEditTime: 2025-02-13 10:57:18
  */
 
 /*
@@ -169,11 +169,10 @@ void test4()
     printDeque(d1); // 0 1 2 10 20 30 666 666 666 111 3 4 5 6 7 8
 
     d1.erase(d1.begin() + 3);
-    printDeque(d1); // 0 1 2 20 30 666 666 666 111 3 4 5 6 7 8
-    d1.erase(d1.begin() + 3, d1.begin() + 6);
-    printDeque(d1); // 0 1 2 666 666 111 3 4 5 6 7 8
+    printDeque(d1);                           // 0 1 2 20 30 666 666 666 111 3 4 5 6 7 8
+    d1.erase(d1.begin() + 3, d1.begin() + 6); // [3, 6)
+    printDeque(d1);                           // 0 1 2 666 666 111 3 4 5 6 7 8
 }
-
 
 /*
 deque容器排序:
@@ -182,15 +181,15 @@ sort(iterator beg, iterator end) //对beg和end区间内元素进行排序
 void test5()
 {
     deque<int> d1;
-    d1.push_back(234); 
-    d1.push_back(4); 
-    d1.push_back(24); 
-    d1.push_front(53); 
-    d1.push_front(13); 
-    d1.push_front(452); 
-    printDeque(d1);      // 452 13 53 234 4 24
-    sort(d1.begin(), d1.end());    // 也支持vector容器排序
-    printDeque(d1);      // 4 13 24 53 234 452
+    d1.push_back(234);
+    d1.push_back(4);
+    d1.push_back(24);
+    d1.push_front(53);
+    d1.push_front(13);
+    d1.push_front(452);
+    printDeque(d1);             // 452 13 53 234 4 24
+    sort(d1.begin(), d1.end()); // 也支持vector容器排序
+    printDeque(d1);             // 4 13 24 53 234 452
 }
 
 int main()

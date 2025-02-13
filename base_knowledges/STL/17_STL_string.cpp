@@ -3,7 +3,7 @@
  * @Author:  shang guan meng luo
  * @version:
  * @Date: 2024-10-03 13:56:55
- * @LastEditTime: 2024-10-04 19:29:50
+ * @LastEditTime: 2025-02-13 10:43:09
  */
 
 /*
@@ -38,7 +38,7 @@ void test1()
     cout << "s4 = " << s4 << endl; // s4 = hello world
     string s5(10, '-');
     cout << "s5 = " << s5 << endl; // s5 =  ----------
-    cout << s3.at(1) << endl;      // e     == s3[1]
+    cout << s3.at(1) << endl;      // e     (== s3[1])
 }
 
 /*
@@ -68,7 +68,7 @@ void test2()
     cout << "s4 = " << s4 << endl; // s4 = hello C++!
     string s5;
     s5.assign(s4, 8);
-    cout << "s5 = " << s5 << endl; // s5 = +!
+    cout << "s5 = " << s5 << endl; // s5 = +!                ??????
     s5.assign("hello C++!", 8);
     cout << "s5 = " << s5 << endl; // s5 = hello C+
     string s6;
@@ -130,7 +130,6 @@ void test4()
     cout << "after replace s1 = " << s1 << endl; // after replace s1 = hello China! hello tomorrow
 }
 
-
 /*
 string比较:
 比较方式: 字符串比较是按字符的ASCII码进行对比
@@ -139,17 +138,16 @@ string比较:
 < 返回 -1
 
 函数原型:
-int compare(const string &s)const; // 与字符串s比较   通常用于比较两个字符串是否相等   
+int compare(const string &s)const; // 与字符串s比较   通常用于比较两个字符串是否相等
 int compare(const char *s)const;   // 与字符串s比较
 */
 void test5()
 {
     string s1 = "hello world";
     string s2 = "hello tomorrow";
-    int ans = s1.compare(s2);           
-    cout << "ans = " << ans << endl;     // ans = 1    w > t  
+    int ans = s1.compare(s2);
+    cout << "ans = " << ans << endl; // ans = 1    w > t
 }
-
 
 /*
 string插入和删除:
@@ -164,15 +162,14 @@ void test6()
     string s1 = "hello world";
     string s2 = " hello tomorrow";
     s1.insert(s1.length(), s2);
-    cout << "s1 = " << s1 << endl;     // s1 = hello world hello tomorrow
+    cout << "s1 = " << s1 << endl; // s1 = hello world hello tomorrow
     s1.insert(s1.length(), 5, '$');
-    cout << "s1 = " << s1 << endl;     // s1 = hello world hello tomorrow$$$$$
-    s1.erase(s1.length()-4, '$');
-    cout << "s1 = " << s1 << endl;     // s1 = hello world hello tomorrow$
-    s1.erase(s1.length()-10, 5);       // 从倒数第10个字符开始删，删掉5个字符
-    cout << "s1 = " << s1 << endl;     // s1 = hello world hellorrow$
+    cout << "s1 = " << s1 << endl; // s1 = hello world hello tomorrow$$$$$
+    s1.erase(s1.length() - 4, '$');
+    cout << "s1 = " << s1 << endl; // s1 = hello world hello tomorrow$
+    s1.erase(s1.length() - 10, 5); // 从倒数第10个字符开始删，删掉5个字符
+    cout << "s1 = " << s1 << endl; // s1 = hello world hellorrow$
 }
-
 
 /*
 string子串:
@@ -182,10 +179,9 @@ string substr(int pos0,int n=npos) const;    返回由pos开始的n个字符组�
 void test7()
 {
     string s1 = "hello world";
-    string substr = s1.substr(4, 6);           // 从第4个字符开始的6个字符
-    cout << "substr = " << substr << endl;     // substr = o worl
+    string substr = s1.substr(4, 6);       // 从下标为4开始的6个字符
+    cout << "substr = " << substr << endl; // substr = o worl
 }
-
 
 int main()
 {
